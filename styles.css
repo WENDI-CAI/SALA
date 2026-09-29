@@ -1192,6 +1192,22 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
   .running-head > span:nth-child(2) { display: none; }
   .folio { bottom: 28px; }
 
+  /* Keep the cover label in flow when the spread becomes one column.
+     Its wrapped height must push the green tag down on short screens. */
+  .spread.spread-cover {
+    justify-content: flex-start;
+    padding-top: calc(var(--head-h) + 24px);
+  }
+  .spread-cover > .running-head {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto 24px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 16px;
+  }
+
   .cover-grid { grid-template-columns: 1fr; gap: 34px; align-items: start; }
   .cover-side { border-top: 1px solid rgba(255, 255, 255, .14); padding-top: 4px; }
   .cover-lede { border-top: 0; padding-top: 22px; max-width: 54ch; }
