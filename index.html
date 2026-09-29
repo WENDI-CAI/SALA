@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#05080e">
+  <meta name="description" content="SALA generates complex molecular crystals through symmetry-constrained state–context separation. Explore the framework, generated structures and research results.">
+  <meta property="og:title" content="SALA — Complex molecules. Ordered crystals.">
+  <meta property="og:description" content="Symmetry-Aware Lattice and Asymmetric-unit generation.">
+  <meta property="og:type" content="website">
+  <title>SALA — Complex molecules. Ordered crystals.</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Arm the scroll reveal before first paint. If app.js never confirms,
+    // the flag is dropped so content can never stay invisible.
+    (function () {
+      var root = document.documentElement;
+      if (!("requestAnimationFrame" in window)) return;
+      root.classList.add("reveal-ready");
+      setTimeout(function () { if (!root.dataset.revealArmed) root.classList.remove("reveal-ready"); }, 4000);
+    })();
+  </script>
+  <script src="site-config.js?v=paper-2609-34690" defer></script>
+  <script src="media-controller.js?v=all-visible-1" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <!-- Running head: the brochure's page header, carrying the site navigation. -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#overview" aria-label="SALA home">
+        <svg viewBox="0 0 38 38" aria-hidden="true"><path d="m19 3 14 8v16l-14 8-14-8V11Z M5 11l14 8 14-8 M19 19v16 M12 7l14 8v16 M5 19l14 8 14-8"/></svg>
+        <span class="brand-name">SALA</span>
+      </a>
+      <span class="head-divider" aria-hidden="true">|</span>
+      <span class="head-subject" id="spread-label" aria-hidden="true">Molecular crystal generation</span>
+      <nav class="desktop-nav" aria-label="Main navigation" data-i18n-aria="nav.label">
+        <a href="#structures" data-i18n="nav.structures">Structures</a>
+        <a href="#framework" data-i18n="nav.framework">Framework</a>
+        <a href="#results" data-i18n="nav.results">Results</a>
+      </nav>
+      <div class="header-actions">
+        <div class="language-switch" role="group" aria-label="Language / 语言">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="zh" aria-pressed="false">中文</button>
+        </div>
+        <button class="menu-toggle icon-button" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Open navigation" data-i18n-aria="nav.open"><span></span><span></span></button>
+      </div>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" hidden aria-label="Mobile navigation" data-i18n-aria="nav.label">
+      <a href="#structures" data-i18n="nav.structures">Structures</a>
+      <a href="#cases" data-i18n="nav.cases">Cases</a>
+      <a href="#framework" data-i18n="nav.framework">Framework</a>
+      <a href="#results" data-i18n="nav.results">Results</a>
+      <a href="#figures" data-i18n="nav.figures">Figures</a>
+      <a href="#status" data-i18n="nav.status">Status</a>
+    </nav>
+  </header>
+
+  <!-- Page index, echoing a brochure's folio sequence. -->
+  <nav class="spread-rail" aria-label="Page index" data-i18n-aria="rail.label">
+    <a href="#overview" data-rail="overview"><span class="mono">01</span><span class="rail-name" data-i18n="rail.cover">Cover</span></a>
+    <a href="#structures" data-rail="structures"><span class="mono">03</span><span class="rail-name" data-i18n="nav.structures">Structures</span></a>
+    <a href="#cases" data-rail="cases"><span class="mono">05</span><span class="rail-name" data-i18n="nav.cases">Cases</span></a>
+    <a href="#framework" data-rail="framework"><span class="mono">07</span><span class="rail-name" data-i18n="nav.framework">Framework</span></a>
+    <a href="#results" data-rail="results"><span class="mono">09</span><span class="rail-name" data-i18n="nav.results">Results</span></a>
+    <a href="#figures" data-rail="figures"><span class="mono">11</span><span class="rail-name" data-i18n="nav.figures">Figures</span></a>
+    <a href="#status" data-rail="status"><span class="mono">13</span><span class="rail-name" data-i18n="nav.status">Status</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============ 01 / 02 — Cover ============ -->
+    <section class="spread spread-dark spread-fold spread-cover" id="overview" aria-labelledby="cover-heading">
+      <!-- Cover artwork: one motif (an asymmetric unit) repeated by a six-fold
+           rotation into a cell, and that cell repeated on a hexagonal lattice. -->
+      <div class="cover-art" aria-hidden="true">
+        <svg class="cover-lattice" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sym-stroke" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#48f2c4"/><stop offset=".34" stop-color="#6cebff"/>
+              <stop offset=".7" stop-color="#5290f4"/><stop offset="1" stop-color="#2f3fb6"/>
+            </linearGradient>
+            <radialGradient id="sym-glow" cx="46%" cy="70%" r="66%">
+              <stop offset="0" stop-color="#0e3a4d" stop-opacity=".88"/>
+              <stop offset=".42" stop-color="#09223a" stop-opacity=".6"/>
+              <stop offset="1" stop-color="#04070d" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="sym-halo" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#3fe8c8" stop-opacity=".24"/>
+              <stop offset=".5" stop-color="#2f8fe0" stop-opacity=".13"/>
+              <stop offset="1" stop-color="#1b2f8e" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="sym-fade" cx="48%" cy="62%" r="58%">
+              <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+              <stop offset=".52" stop-color="#ffffff" stop-opacity=".42"/>
+              <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+            </radialGradient>
+            <mask id="sym-mask"><rect width="1200" height="800" fill="url(#sym-fade)"/></mask>
+
+            <g id="sym-asu" fill="none" stroke="url(#sym-stroke)" stroke-width="1.5" stroke-linecap="round">
+              <path d="M0 -74 C 27 -56, 39 -30, 32 -5"/>
+              <path d="M0 -74 V -35"/>
+              <circle cx="0" cy="-74" r="2.6" fill="url(#sym-stroke)" stroke="none"/>
+            </g>
+            <g id="sym-cell">
+              <use href="#sym-asu"/><use href="#sym-asu" transform="rotate(60)"/><use href="#sym-asu" transform="rotate(120)"/>
+              <use href="#sym-asu" transform="rotate(180)"/><use href="#sym-asu" transform="rotate(240)"/><use href="#sym-asu" transform="rotate(300)"/>
+              <path d="M0 -74 L64.1 -37 L64.1 37 L0 74 L-64.1 37 L-64.1 -37 Z" fill="none" stroke="url(#sym-stroke)" stroke-width="1" opacity=".68"/>
+              <circle r="2" fill="url(#sym-stroke)"/>
+            </g>
+            <pattern id="sym-lattice" width="210" height="363.7" patternUnits="userSpaceOnUse">
+              <path d="M0 0 H210 M0 0 L105 181.85 M210 0 L105 181.85 M0 363.7 H210 M0 363.7 L105 181.85 M210 363.7 L105 181.85 M0 0 V363.7 M210 0 V363.7"
+                    fill="none" stroke="url(#sym-stroke)" stroke-width=".7" opacity=".2"/>
+              <use href="#sym-cell" x="0" y="0"/><use href="#sym-cell" x="210" y="0"/>
+              <use href="#sym-cell" x="0" y="363.7"/><use href="#sym-cell" x="210" y="363.7"/>
+              <use href="#sym-cell" x="105" y="181.85"/>
+            </pattern>
+            <filter id="sym-soft" x="-6%" y="-6%" width="112%" height="112%"><feGaussianBlur stdDeviation="1.2"/></filter>
+            <filter id="sym-dust" x="0" y="0" width="100%" height="100%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.72" numOctaves="2" seed="11"/>
+              <feColorMatrix type="saturate" values="0"/>
+              <feComponentTransfer><feFuncA type="gamma" exponent="7"/></feComponentTransfer>
+            </filter>
+          </defs>
+
+          <rect width="1200" height="800" fill="url(#sym-glow)"/>
+          <g mask="url(#sym-mask)">
+            <rect width="1200" height="800" fill="url(#sym-lattice)" filter="url(#sym-soft)" opacity=".5"/>
+            <rect width="1200" height="800" fill="url(#sym-lattice)" opacity=".36"/>
+          </g>
+          <g transform="translate(620 762)">
+            <circle r="330" fill="url(#sym-halo)"/>
+            <g class="cover-spin"><use href="#sym-cell" transform="scale(2.85)" filter="url(#sym-soft)" opacity=".9"/><use href="#sym-cell" transform="scale(2.85)" opacity=".45"/></g>
+          </g>
+          <g mask="url(#sym-mask)"><rect width="1200" height="800" filter="url(#sym-dust)" opacity=".5"/></g>
+        </svg>
+        <div class="cover-veil"></div>
+      </div>
+      <div class="running-head">
+        <span data-i18n="head.left">SALA · Molecular crystals</span>
+        <span data-i18n="head.center">Symmetry-constrained generation</span>
+        <span class="head-mark" aria-hidden="true">S A L A</span>
+      </div>
+      <div class="spread-inner page-width cover-grid">
+        <div class="cover-copy">
+          <span class="tag-block"><span data-i18n="cover.tag1">SALA</span><span data-i18n="cover.tag2" data-reveal style="--i:0">Molecular crystal generation</span></span>
+          <p class="cover-wordmark" data-reveal style="--i:1" aria-hidden="true">SALA</p>
+          <h1 id="cover-heading" data-reveal style="--i:2" data-i18n-aria="paper.title" aria-label="Complex molecular crystal generation through symmetry-constrained state–context separation"><span class="title-first" data-i18n="paper.title.first">Complex molecular crystal generation</span> <span class="title-second" data-i18n="paper.title.second">through symmetry-constrained state–context separation</span></h1>
+          <div class="cover-authors" data-reveal style="--i:3" role="group" aria-label="Authors and affiliation" data-i18n-aria="paper.authorship">
+            <p class="author-names"><span>Wendi Cai</span><span class="author-separator" aria-hidden="true">·</span><span>Fanyang Mo</span></p>
+            <p class="author-affiliation" data-i18n="paper.affiliation">Peking University</p>
+          </div>
+        </div>
+        <div class="cover-side">
+          <p class="cover-lede" data-reveal style="--i:2" data-i18n="hero.description">Molecular conformation, lattice geometry, and crystal packing. Generated together, guided by symmetry.</p>
+          <nav class="research-links" data-reveal style="--i:3" id="resources" aria-label="Research links" data-i18n-aria="links.label">
+            <a class="resource-link" data-resource="paper" role="link" aria-disabled="true" tabindex="0"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7Z M14 3v5h4 M10 12h5 M10 16h5"/></svg></span><span class="resource-link-copy"><strong data-i18n="links.paper">Paper</strong><span data-link-status data-i18n="links.pending">Link to be added</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
+            <a class="resource-link" data-resource="code" role="link" aria-disabled="true" tabindex="0"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5 M16 7l5 5-5 5 M14 4l-4 16"/></svg></span><span class="resource-link-copy"><strong data-i18n="links.code">Code</strong><span data-link-status data-i18n="links.pending">Link to be added</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
+            <a class="resource-link" data-resource="checkpoint" role="link" aria-disabled="true" tabindex="0"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z M4 7.5l8 4.5 8-4.5 M12 12v9"/></svg></span><span class="resource-link-copy"><strong>Hugging Face</strong><span data-link-status data-i18n="links.checkpoint.pending">Checkpoint · link to be added</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
+          </nav>
+          <p class="resource-status" data-reveal style="--i:4" id="resource-status" data-i18n="links.note">Code and checkpoints coming soon.</p>
+          <a class="scroll-cue" data-reveal style="--i:5" href="#structures"><span data-i18n="cover.scroll">Scroll</span><span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <p class="folio mono" aria-hidden="true"><i>01</i><i>02</i></p>
+    </section>
+
+    <!-- ============ 05 / 06 — Generated structures showcase ============ -->
+    <section class="spread spread-fold spread-showcase" id="structures" aria-labelledby="structures-heading">
+      <div class="running-head">
+        <span data-i18n="head.left">SALA · Molecular crystals</span>
+        <span data-i18n="head.center">Symmetry-constrained generation</span>
+        <span class="head-mark" aria-hidden="true">S A L A</span>
+      </div>
+      <div class="spread-inner page-width showcase-grid">
+        <div class="showcase-copy">
+          <div class="section-marker" data-reveal style="--i:0"><span class="mono">01 /</span><span data-i18n="structures.eyebrow">GENERATED STRUCTURES</span></div>
+          <h2 id="structures-heading" data-reveal style="--i:1" class="display-blue" data-i18n="structures.title">A closer look at crystalline order.</h2>
+          <p class="lede" data-i18n="structures.description" data-reveal style="--i:2">Selected SALA-generated structures across four chemical types and six crystal systems. Explore the different packing arrangements in three dimensions.</p>
+          <dl class="spec-list" data-reveal style="--i:3">
+            <div><dt data-i18n="spec.rendering">Rendering</dt><dd data-i18n="spec.rendering.value">Tubular style · custom element colours</dd></div>
+            <div><dt data-i18n="spec.cell">Cell</dt><dd data-i18n="spec.cell.value">2 × 2 × 2 supercell · fully relaxed</dd></div>
+            <div><dt data-i18n="spec.atoms">Atoms</dt><dd data-i18n="spec.atoms.value">Heavy atoms only · hydrogen omitted</dd></div>
+          </dl>
+          <div class="showcase-nav" data-reveal style="--i:4">
+            <div class="carousel-controls"><button type="button" class="icon-button" id="previous-crystal" aria-label="Previous crystal" data-i18n-aria="crystal.previous">←</button><button type="button" class="icon-button" id="next-crystal" aria-label="Next crystal" data-i18n-aria="crystal.next">→</button></div>
+            <div class="crystal-selectors" role="group" aria-label="Choose a crystal" data-i18n-aria="crystal.choose"><button type="button" data-crystal="0" aria-pressed="true" aria-label="Crystal 1"></button><button type="button" data-crystal="1" aria-pressed="false" aria-label="Crystal 2"></button><button type="button" data-crystal="2" aria-pressed="false" aria-label="Crystal 3"></button><button type="button" data-crystal="3" aria-pressed="false" aria-label="Crystal 4"></button><button type="button" data-crystal="4" aria-pressed="false" aria-label="Crystal 5"></button><button type="button" data-crystal="5" aria-pressed="false" aria-label="Crystal 6"></button><button type="button" data-crystal="6" aria-pressed="false" aria-label="Crystal 7"></button><button type="button" data-crystal="7" aria-pressed="false" aria-label="Crystal 8"></button><button type="button" data-crystal="8" aria-pressed="false" aria-label="Crystal 9"></button></div>
+          </div>
+        </div>
+        <div class="showcase-plate" data-reveal="scale" style="--i:1">
+          <div class="plate-topline"><span><span class="live-dot" aria-hidden="true"></span><span data-i18n="hero.visual">GENERATED CRYSTAL</span></span><span class="mono" id="hero-counter">01 / 09</span></div>
+          <div class="crystal-stage">
+            <span class="crosshair crosshair-tl" aria-hidden="true">+</span><span class="crosshair crosshair-br" aria-hidden="true">+</span>
+            <span class="crystal-media hero-media"><img decoding="async" id="hero-crystal" src="assets/crystals/sala-859249-tube-preview.webp" width="960" height="912" alt="Rotating 2 by 2 by 2 supercell of a fully relaxed SALA-generated molecular crystal, target 859249" fetchpriority="high"><video id="hero-video" class="crystal-video" data-playback="hero" data-src="assets/crystals/sala-859249-tube-hero.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span>
+            <div class="stage-label mono">2 × 2 × 2<span data-i18n="hero.supercell">SUPERCELL</span></div>
+            <button class="motion-button icon-button" type="button" data-motion aria-label="Pause rotations" data-i18n-aria="motion.pause"><svg class="pause-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 5v10M13 5v10"/></svg><svg class="play-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6Z"/></svg></button>
+          </div>
+          <div class="plate-bottomline">
+            <span id="hero-type" class="structure-type">Single-component crystal</span>
+            <span id="hero-symmetry" class="structure-symmetry">Generation symmetry · P2₁/c</span>
+          </div>
+        </div>
+      </div>
+      <p class="folio mono" aria-hidden="true"><i>03</i><i>04</i></p>
+    </section>
+
+    <!-- ============ 07 / 08 — Selected cases ============ -->
+    <section class="spread spread-cases" id="cases" aria-labelledby="cases-heading">
+      <div class="running-head">
+        <span data-i18n="head.left">SALA · Molecular crystals</span>
+        <span data-i18n="head.center">Symmetry-constrained generation</span>
+        <span class="head-mark" aria-hidden="true">S A L A</span>
+      </div>
+      <div class="spread-inner page-width">
+        <div class="cases-head">
+          <div>
+            <div class="section-marker" data-reveal style="--i:0"><span class="mono">02 /</span><span data-i18n="cases.eyebrow">SELECTED CASES</span></div>
+            <h2 id="cases-heading" data-reveal style="--i:1" class="display-ink" data-i18n="cases.title">Nine generated crystals.</h2>
+          </div>
+          <p class="lede" data-i18n="cases.description" data-reveal style="--i:2">Filter by chemical type and generation crystal system. Every card opens an enlarged rotation with its own download.</p>
+        </div>
+        <div class="gallery-controls" data-reveal style="--i:3">
+          <div class="chemical-filters" role="group" aria-label="Chemical type" data-i18n-aria="gallery.types">
+            <button type="button" data-chemical-type="all" aria-pressed="true" data-i18n="gallery.all">All types</button>
+            <button type="button" data-chemical-type="single" aria-pressed="false" data-i18n="crystal.single">Single-component</button>
+            <button type="button" data-chemical-type="multi" aria-pressed="false" data-i18n="crystal.multi">Multicomponent</button>
+            <button type="button" data-chemical-type="ionic" aria-pressed="false" data-i18n="crystal.ionic">Ionic</button>
+            <button type="button" data-chemical-type="metal" aria-pressed="false" data-i18n="crystal.metal">Metal-containing</button>
+          </div>
+          <label class="system-filter"><span data-i18n="gallery.system">Generation crystal system</span><select id="crystal-system-filter" aria-label="Generation crystal system" data-i18n-aria="gallery.system"><option value="all" data-i18n="gallery.system.all">All crystal systems</option><option value="triclinic" data-i18n="system.triclinic">Triclinic</option><option value="monoclinic" data-i18n="system.monoclinic">Monoclinic</option><option value="orthorhombic" data-i18n="system.orthorhombic">Orthorhombic</option><option value="tetragonal" data-i18n="system.tetragonal">Tetragonal</option><option value="trigonal" data-i18n="system.trigonal">Trigonal</option><option value="hexagonal" data-i18n="system.hexagonal">Hexagonal</option></select></label>
+        </div>
+        <p id="gallery-count" data-reveal style="--i:4" class="gallery-count" aria-live="polite" aria-atomic="true">9 of 9 cases</p>
+        <div class="structure-grid" id="crystal-gallery">
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="0" aria-label="Enlarge crystal 859249"><span class="card-index mono">01</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-859249-tube-preview.webp" width="640" height="608" alt="SALA-generated single-component crystal 859249, fully relaxed 2 × 2 × 2 supercell, generation symmetry P2₁/c" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-859249-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Single-component</h3><span class="mono">P2₁/c <span class="subtle">/</span> 859249</span></div><span class="structure-tag">Monoclinic*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="1" aria-label="Enlarge crystal 2070206"><span class="card-index mono">02</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-2070206-tube-preview.webp" width="640" height="640" alt="SALA-generated metal-containing crystal 2070206, fully relaxed 2 × 2 × 2 supercell, generation symmetry P−1" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-2070206-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Metal-containing</h3><span class="mono">P−1 <span class="subtle">/</span> 2070206</span></div><span class="structure-tag">Triclinic*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="2" aria-label="Enlarge crystal 726779"><span class="card-index mono">03</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-726779-tube-preview.webp" width="640" height="640" alt="SALA-generated single-component crystal 726779, fully relaxed 2 × 2 × 2 supercell, generation symmetry P3₂" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-726779-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Single-component</h3><span class="mono">P3₂ <span class="subtle">/</span> 726779</span></div><span class="structure-tag">Trigonal*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="3" aria-label="Enlarge crystal 2172461"><span class="card-index mono">04</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-2172461-tube-preview.webp" width="640" height="640" alt="SALA-generated multicomponent crystal 2172461, fully relaxed 2 × 2 × 2 supercell, generation symmetry P1" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-2172461-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Multicomponent</h3><span class="mono">P1 <span class="subtle">/</span> 2172461</span></div><span class="structure-tag">Triclinic*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="4" aria-label="Enlarge crystal 939712"><span class="card-index mono">05</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-939712-tube-preview.webp" width="640" height="640" alt="SALA-generated ionic crystal 939712, fully relaxed 2 × 2 × 2 supercell, generation symmetry P3₁" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-939712-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Ionic</h3><span class="mono">P3₁ <span class="subtle">/</span> 939712</span></div><span class="structure-tag">Trigonal*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="5" aria-label="Enlarge crystal 2128532"><span class="card-index mono">06</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-2128532-tube-preview.webp" width="640" height="640" alt="SALA-generated metal-containing crystal 2128532, fully relaxed 2 × 2 × 2 supercell, generation symmetry Pca2₁" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-2128532-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Metal-containing</h3><span class="mono">Pca2₁ <span class="subtle">/</span> 2128532</span></div><span class="structure-tag">Orthorhombic*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="6" aria-label="Enlarge crystal 1212258"><span class="card-index mono">07</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-1212258-tube-preview.webp" width="640" height="640" alt="SALA-generated single-component crystal 1212258, fully relaxed 2 × 2 × 2 supercell, generation symmetry P4₁" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-1212258-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Single-component</h3><span class="mono">P4₁ <span class="subtle">/</span> 1212258</span></div><span class="structure-tag">Tetragonal*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="7" aria-label="Enlarge crystal 1846154"><span class="card-index mono">08</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-1846154-tube-preview.webp" width="640" height="640" alt="SALA-generated single-component crystal 1846154, fully relaxed 2 × 2 × 2 supercell, generation symmetry P6₁" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-1846154-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Single-component</h3><span class="mono">P6₁ <span class="subtle">/</span> 1846154</span></div><span class="structure-tag">Hexagonal*</span></div></article>
+          <article class="structure-card"><button type="button" class="structure-open" data-open-crystal="8" aria-label="Enlarge crystal 1518539"><span class="card-index mono">09</span><span class="crystal-media card-media"><img decoding="async" src="assets/crystals/sala-1518539-tube-preview.webp" width="640" height="640" alt="SALA-generated ionic crystal 1518539, fully relaxed 2 × 2 × 2 supercell, generation symmetry P2₁" loading="lazy"><video class="crystal-video" data-playback="gallery" data-src="assets/crystals/sala-1518539-tube-preview.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span><span class="card-expand" aria-hidden="true">↗</span></button><div class="structure-card-copy"><div><h3>Ionic</h3><span class="mono">P2₁ <span class="subtle">/</span> 1518539</span></div><span class="structure-tag">Monoclinic*</span></div></article>
+        </div>
+        <div class="gallery-empty" id="gallery-empty" hidden><p data-i18n="gallery.empty">No cases match this combination.</p><button type="button" class="text-link" id="gallery-reset" data-i18n="gallery.reset">Show all cases</button></div>
+        <div class="atom-legend" data-reveal style="--i:0" aria-label="Custom element colours" data-i18n-aria="crystal.legend.label"><span class="atom-legend-label" data-i18n="crystal.legend.title">Tubular style · custom element colours</span><span><i class="swatch" style="background:#bbc5ca" aria-hidden="true"></i>C</span><span><i class="swatch" style="background:#739fcc" aria-hidden="true"></i>N</span><span><i class="swatch" style="background:#6bbbc7" aria-hidden="true"></i>O</span><span><i class="swatch" style="background:#a0cfca" aria-hidden="true"></i>Cl</span><span><i class="swatch" style="background:#8caec5" aria-hidden="true"></i>Br</span><span><i class="swatch" style="background:#8a9fbf" aria-hidden="true"></i>In</span><span><i class="swatch" style="background:#91aabf" aria-hidden="true"></i>Ge</span><span><i class="swatch" style="background:#8bbebb" aria-hidden="true"></i>Se</span><span><i class="swatch" style="background:#a3b8c7" aria-hidden="true"></i>Si</span><span><i class="swatch" style="background:#94a6ba" aria-hidden="true"></i>Cd</span><span><i class="swatch" style="background:#91a4ba" aria-hidden="true"></i>I</span></div>
+        <div class="gallery-footnote" data-reveal style="--i:1"><p data-i18n="structures.note">2 × 2 × 2 supercells · Fully relaxed · Hydrogen atoms omitted. *Crystal systems and space groups refer to the generation condition, before relaxation.</p><button type="button" class="text-link motion-text" data-motion><span data-motion-label>Pause rotations</span><span aria-hidden="true">Ⅱ</span></button></div>
+      </div>
+      <p class="folio mono" aria-hidden="true"><i>05</i><i>06</i></p>
+    </section>
+
+    <!-- ============ 09 / 10 — The framework ============ -->
+    <section class="spread spread-framework" id="framework" aria-labelledby="framework-heading">
+      <div class="split-dark" aria-hidden="true">
+        <div class="beam-field"><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="running-head running-head-split">
+        <span data-i18n="head.left">SALA · Molecular crystals</span>
+        <span data-i18n="head.center">Symmetry-constrained generation</span>
+        <span class="head-mark" aria-hidden="true">S A L A</span>
+      </div>
+      <div class="spread-inner page-width framework-grid">
+        <div class="framework-left">
+          <span class="tag-block"><span data-i18n="cover.tag1">SALA</span><span data-i18n="framework.eyebrow" data-reveal style="--i:0">THE FRAMEWORK</span></span>
+          <h2 id="framework-heading" data-reveal style="--i:1" class="display-light"><span data-i18n="framework.line1">A compact state.</span><span class="muted-heading" data-i18n="framework.line2">A complete crystal context.</span></h2>
+          <div class="framework-overview" data-reveal style="--i:2">
+            <span class="micro-label micro-label-light" data-i18n="paper.abstract.label">Research overview</span>
+            <p class="overview-body" data-i18n="paper.abstract.body">Molecular crystal generation must coordinate conformation, lattice geometry and periodic packing. SALA uses flow matching to evolve a compact, symmetry-constrained asymmetric-unit state while reasoning over the full periodic environment. This state–context separation enables joint generation across four chemical classes and all seven crystal systems represented in a 799-crystal held-out benchmark.</p>
+            <p class="expansion expansion-light"><strong>SALA</strong><span data-i18n="framework.expansion">Symmetry-Aware Lattice and Asymmetric-unit generation</span></p>
+          </div>
+        </div>
+        <div class="framework-right">
+          <div class="mint-panel" data-reveal style="--i:1">
+            <h3 class="panel-title" data-i18n="framework.panel.title">SALA's approach</h3>
+            <p class="panel-lede" data-i18n="framework.description">Separate what needs to evolve from what the model needs to see. Symmetry connects the two.</p>
+            <figure class="paper-figure framework-figure"><button type="button" class="figure-open" data-open-figure="framework" aria-label="Enlarge SALA framework figure" data-i18n-aria="figure.framework.open"><img src="assets/figures/fig1-framework.webp" width="2200" height="1347" alt="SALA framework showing reduced atomic and lattice degrees of freedom, lattice masks, asymmetric-unit expansion, periodic context, the transformer and orbit pullback" data-i18n-alt="figure.framework.alt" loading="lazy"><span class="figure-expand"><span data-i18n="figure.enlarge">Enlarge figure</span> ↗</span></button><figcaption><span class="figure-number mono">FIG. 01</span><p data-i18n="figure.framework.caption">SALA separates a symmetry-constrained generative state from full-cell context.</p></figcaption></figure>
+            <div class="lead-list">
+              <p><strong data-i18n="method.state.title">Evolve the independent state</strong><span data-i18n="method.state.body">Generate only the asymmetric-unit coordinates and symmetry-compatible lattice parameters.</span></p>
+              <p><strong data-i18n="method.context.title">Reason over the full context</strong><span data-i18n="method.context.body">Expand the full cell and model periodic interactions with a structure-aware transformer.</span></p>
+              <p><strong data-i18n="method.update.title">Return to symmetry</strong><span data-i18n="method.update.body">Map coordinated predictions back to the independent state through OrbitPullback.</span></p>
+            </div>
+          </div>
+        </div>
+        <!-- Frosted slab straddling the fold, as in the reference spreads. -->
+        <div class="glass-card" data-reveal style="--i:2">
+          <h3 data-i18n="challenge.title">Three quantities, one decision</h3>
+          <p class="glass-lede" data-i18n="challenge.lede">Molecular crystal generation must coordinate conformation, lattice geometry and periodic packing.</p>
+          <div class="glass-columns">
+            <div><h4 data-i18n="challenge.one.title">Conformation</h4><p data-i18n="challenge.one.body">The heavy-atom geometry of the molecules inside the asymmetric unit.</p></div>
+            <div><h4 data-i18n="challenge.two.title">Lattice geometry</h4><p data-i18n="challenge.two.body">Cell parameters that remain compatible with the target symmetry.</p></div>
+            <div><h4 data-i18n="challenge.three.title">Periodic packing</h4><p data-i18n="challenge.three.body">How symmetry copies and neighbouring cells arrange in the full periodic environment.</p></div>
+          </div>
+        </div>
+      </div>
+      <p class="folio mono" aria-hidden="true"><i>07</i><i>08</i></p>
+    </section>
+
+    <!-- ============ 11 / 12 — Research results ============ -->
+    <section class="spread spread-fold spread-results" id="results" aria-labelledby="results-heading">
+      <div class="running-head">
+        <span data-i18n="head.left">SALA · Molecular crystals</span>
+        <span data-i18n="head.center">Symmetry-constrained generation</span>
+        <span class="head-mark" aria-hidden="true">S A L A</span>
+      </div>
+      <div class="spread-inner page-width">
+        <div class="results-head">
+          <div>
+            <div class="section-marker" data-reveal style="--i:0"><span class="mono">03 /</span><span data-i18n="results.eyebrow">RESEARCH RESULTS</span></div>
+            <h2 id="results-heading" data-reveal style="--i:1" class="display-blue" data-i18n="results.title">Crystal generation, put to the test.</h2>
+          </div>
+          <p class="lede" data-i18n="results.description" data-reveal style="--i:2">Evaluated against experimental reference crystals across molecular compositions, sizes, and symmetries.</p>
+        </div>
+        <div class="scope-strip" data-reveal style="--i:3">
+          <div class="scope-item"><span class="scope-key" data-i18n="scope.classes">Chemical classes</span><strong class="scope-value">4</strong><span class="scope-note" data-i18n="scope.classes.note">Single-component, multicomponent, ionic, metal-containing</span></div>
+          <div class="scope-item"><span class="scope-key" data-i18n="scope.systems">Crystal systems</span><strong class="scope-value">7</strong><span class="scope-note" data-i18n="scope.systems.note">All seven represented in the held-out benchmark</span></div>
+          <div class="scope-item"><span class="scope-key" data-i18n="scope.candidates">Candidates per target</span><strong class="scope-value">50</strong><span class="scope-note" data-i18n="scope.candidates.note">SALA budget; the baseline uses 50–3,150</span></div>
+        </div>
+        <div class="results-grid">
+          <div class="benchmark-panel" data-reveal style="--i:0">
+            <div class="benchmark-intro">
+              <span class="micro-label" data-i18n="benchmark.eyebrow">ARCHIVED PACKING-THRESHOLD HITS</span>
+              <p data-i18n="benchmark.summary">575 of 799 targets have a candidate below 2 Å packing RMSD, using 50 SALA candidates per target.</p>
+              <a class="text-link" href="#figures"><span data-i18n="benchmark.link">Explore the evidence</span><span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="benchmark-chart">
+              <div class="chart-controls" role="group" aria-label="Choose a benchmark metric" data-i18n-aria="benchmark.choose"><button type="button" data-metric="recovery" aria-pressed="true" data-i18n="benchmark.recovery">Packing hits ↑</button><button type="button" data-metric="rmsd" aria-pressed="false" data-i18n="benchmark.rmsd">Packing RMSD ↓</button></div>
+              <div class="chart-unit" id="chart-unit">Higher is better · %</div>
+              <div class="chart-bars" aria-live="polite">
+                <div class="chart-row"><div class="bar-label"><span>SALA</span><strong id="sala-chart-value">72.0%</strong></div><div class="bar-track"><div id="sala-bar" class="bar-fill sala-fill" style="--bar:72%"></div></div></div>
+                <div class="chart-row"><div class="bar-label"><span data-i18n="benchmark.baseline">All-atom method baseline</span><strong id="clari-chart-value">8.1%</strong></div><div class="bar-track"><div id="clari-bar" class="bar-fill clari-fill" style="--bar:8.1%"></div></div></div>
+              </div>
+              <div class="chart-axis mono"><span>0</span><span id="chart-mid">50</span><span id="chart-max">100%</span></div>
+              <p class="chart-note" data-i18n="benchmark.budgets">Candidates per target: SALA 50 · all-atom method baseline 50–3,150</p>
+            </div>
+          </div>
+          <div class="stat-orb" data-reveal="scale" style="--i:1">
+            <div class="orb" aria-hidden="true"></div>
+            <dl class="stat-stack">
+              <div><dt class="stat-value">799</dt><dd data-i18n="stat.targets">Held-out crystals</dd></div>
+              <div><dt class="stat-value">72.0<span>%</span></dt><dd data-i18n="stat.hits">Archived packing-threshold hits</dd></div>
+              <div><dt class="stat-value">1.70<span> Å</span></dt><dd data-i18n="stat.packing">Target-best packing RMSD</dd></div>
+              <div><dt class="stat-value">0.52<span> Å</span></dt><dd data-i18n="stat.conformer">Target-best conformer RMSD</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="evaluation-note" data-reveal style="--i:2" data-i18n="results.note">Archived hit rates use packing RMSD below 2 Å only; joint clash-free recovery has not been recomputed. Packing RMSD values are mean target-best errors on the 799-crystal benchmark, evaluated on raw generated heavy-atom structures.</p>
+      </div>
+      <p class="folio mono" aria-hidden="true"><i>09</i><i>10</i></p>
+    </section>
+
+    <!-- ============ 13 / 14 — Manuscript figures ============ -->
+    <section class="spread spread-figures" id="figures" aria-labelledby="figures-heading">
+      <div class="running-head">
+        <span data-i18n="head.left">SALA · Molecular crystals</span>
+        <span data-i18n="head.center">Symmetry-constrained generation</span>
+        <span class="head-mark" aria-hidden="true">S A L A</span>
+      </div>
+      <div class="spread-inner page-width" id="research-figures">
+        <div class="figures-head">
+          <div>
+            <div class="section-marker" data-reveal style="--i:0"><span class="mono">04 /</span><span data-i18n="figures.eyebrow">MANUSCRIPT FIGURES</span></div>
+            <h2 id="figures-heading" data-reveal style="--i:1" class="display-ink" data-i18n="figures.title">The original evidence.</h2>
+          </div>
+          <p class="lede" data-i18n="figures.description" data-reveal style="--i:2">Four manuscript figures, unaltered. Each one carries its own reading note.</p>
+        </div>
+        <div class="figure-tabs" data-reveal style="--i:3" role="tablist" aria-label="Research figures" data-i18n-aria="figure.tabs"><button type="button" role="tab" id="tab-performance" aria-controls="figure-panel" aria-selected="true" tabindex="0" data-figure-tab="performance"><span class="mono">02</span><span data-i18n="figure.performance.title">Reference recovery</span></button><button type="button" role="tab" id="tab-complexity" aria-controls="figure-panel" aria-selected="false" tabindex="-1" data-figure-tab="complexity"><span class="mono">03</span><span data-i18n="figure.complexity.title">Complexity</span></button><button type="button" role="tab" id="tab-dynamics" aria-controls="figure-panel" aria-selected="false" tabindex="-1" data-figure-tab="dynamics"><span class="mono">04</span><span data-i18n="figure.dynamics.title">Generation dynamics</span></button><button type="button" role="tab" id="tab-ablation" aria-controls="figure-panel" aria-selected="false" tabindex="-1" data-figure-tab="ablation"><span class="mono">05</span><span data-i18n="figure.ablation.title">Ablations</span></button></div>
+        <div role="tabpanel" id="figure-panel" tabindex="0" aria-labelledby="tab-performance" class="figure-panel">
+          <figure class="paper-figure result-figure" data-reveal style="--i:0"><button type="button" class="figure-open" id="result-figure-open" data-open-figure="performance" aria-label="Enlarge research figure" data-i18n-aria="figure.results.open"><img id="result-figure-img" src="assets/figures/fig2-performance.webp" width="2200" height="1602" alt="Generated/reference crystal overlays, structural metrics and recovery rates for SALA and the all-atom method baseline" loading="lazy"><span class="figure-expand"><span data-i18n="figure.enlarge">Enlarge figure</span> ↗</span></button><figcaption><span class="figure-number mono" id="result-figure-number">FIG. 02</span><p id="result-figure-caption">Recovery of molecular crystals across chemical classes and crystal systems.</p></figcaption></figure>
+          <aside class="violet-card" data-reveal style="--i:1">
+            <h3 data-i18n="figures.reading">How to read it</h3>
+            <p class="figure-context" id="figure-context"></p>
+          </aside>
+        </div>
+      </div>
+      <p class="folio mono" aria-hidden="true"><i>11</i><i>12</i></p>
+    </section>
+
+    <!-- ============ 15 / 16 — Research status ============ -->
+    <footer class="spread spread-fold spread-status" id="status" aria-labelledby="status-heading">
+      <div class="running-head">
+        <span data-i18n="head.left">SALA · Molecular crystals</span>
+        <span data-i18n="head.center">Symmetry-constrained generation</span>
+        <span class="head-mark" aria-hidden="true">S A L A</span>
+      </div>
+      <div class="spread-inner page-width status-grid">
+        <div class="status-left" data-reveal style="--i:0">
+          <h2 id="status-heading" data-i18n="status.title">Research status</h2>
+          <p class="status-lede" data-i18n="status.lede">This page presents the framework, generated structures and manuscript results. The links below open once their public destinations exist.</p>
+          <ul class="status-list">
+            <li><span class="status-key" data-i18n="links.paper">Paper</span><span class="status-value" data-status-slot="paper" data-i18n="links.pending">Link to be added</span></li>
+            <li><span class="status-key" data-i18n="links.code">Code</span><span class="status-value" data-status-slot="code" data-i18n="links.pending">Link to be added</span></li>
+            <li><span class="status-key">Hugging Face</span><span class="status-value" data-status-slot="checkpoint" data-i18n="links.checkpoint.pending">Checkpoint · link to be added</span></li>
+          </ul>
+          <p class="colophon" data-i18n="colophon.note">A research project page. No publication venue, licence or release date has been announced.</p>
+        </div>
+        <div class="status-right" data-reveal style="--i:1">
+          <div class="closing-mark">
+            <a class="footer-wordmark" href="#overview" aria-label="SALA home">
+              <svg viewBox="0 0 38 38" aria-hidden="true"><path d="m19 3 14 8v16l-14 8-14-8V11Z M5 11l14 8 14-8 M19 19v16 M12 7l14 8v16 M5 19l14 8 14-8"/></svg>
+              <span>SALA</span>
+            </a>
+            <p class="closing-tagline" data-i18n="footer.tagline">Symmetry in the state. Complexity in the context.</p>
+            <p class="closing-status" data-i18n="footer.status">SALA · Molecular crystal generation</p>
+          </div>
+          <div class="word-texture" id="word-texture" aria-hidden="true"></div>
+        </div>
+      </div>
+      <a class="back-top" href="#overview" aria-label="Back to top" data-i18n-aria="footer.top">↑</a>
+      <p class="folio mono" aria-hidden="true"><i>13</i><i>14</i></p>
+    </footer>
+
+  </main>
+
+  <dialog class="media-dialog" id="media-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><div><span class="mono" id="dialog-kicker">SALA / FIGURE</span><h2 id="dialog-title">Framework</h2></div><div class="dialog-actions"><a class="dialog-zoom" id="dialog-gif" hidden download data-i18n="crystal.download">Download HD GIF</a><button type="button" id="dialog-motion" class="dialog-zoom" data-motion hidden><span data-motion-label>Pause rotations</span></button><button type="button" class="dialog-zoom" id="dialog-zoom" data-i18n="dialog.zoom">Actual size</button><button type="button" class="icon-button dialog-close" id="dialog-close" aria-label="Close enlarged view" data-i18n-aria="dialog.close">×</button></div></div><div class="dialog-image-wrap" id="dialog-image-wrap"><img id="dialog-image" src="assets/figures/fig1-framework.webp" alt=""><span class="crystal-media dialog-crystal" id="dialog-crystal" hidden><img id="dialog-crystal-poster" alt="" decoding="async"><video id="dialog-video" class="crystal-video" data-playback="detail" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></span></div><p class="dialog-caption" id="dialog-caption"></p></dialog>
+  <noscript><div class="noscript-note">JavaScript enables language switching, rotating previews, and figure enlargement. You can still read the English research overview and view static structures. / 开启 JavaScript 后可切换中英文、播放旋转动画与查看大图。</div></noscript>
+</body>
+</html>
