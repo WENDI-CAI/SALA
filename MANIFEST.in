@@ -1,0 +1,5 @@
+include LICENSE README.md ARCHITECTURE.md
+recursive-include src/sala *.py
+recursive-include examples *.py
+recursive-include tests *.py
+global-exclude *.pyc *.pyo .DS_Store *.ckpt *.pt *.pth *.safetensors *.cif *.npy *.npz *.pkl *.pickle
