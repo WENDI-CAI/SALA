@@ -27,7 +27,7 @@ const translations = {
     "rail.label": "Page index", "rail.cover": "Cover",
     "head.left": "SALA · Molecular crystals", "head.center": "Symmetry-constrained generation", "head.subject": "Molecular crystal generation",
     "cover.tag1": "SALA", "cover.tag2": "Molecular crystal generation", "cover.scroll": "Scroll",
-    "colophon.note": "A research project page. No publication venue, licence or release date has been announced.",
+    "colophon.note": "Model architecture code is released under the MIT License; checkpoints remain unreleased.",
     "subject.structures": "Generated structures", "subject.cases": "Selected cases", "subject.framework": "The framework", "subject.results": "Research results", "subject.figures": "Manuscript figures", "subject.status": "Research status",
     "spec.rendering": "Rendering", "spec.rendering.value": "Tubular style · custom element colours",
     "spec.cell": "Cell", "spec.cell.value": "2 × 2 × 2 supercell · fully relaxed",
@@ -57,7 +57,7 @@ const translations = {
     "benchmark.eyebrow": "ARCHIVED PACKING-THRESHOLD HITS", "benchmark.summary": "575 of 799 targets have a candidate below 2 Å packing RMSD, using 50 SALA candidates per target.", "benchmark.link": "Explore the evidence", "benchmark.choose": "Choose a benchmark metric", "benchmark.recovery": "Packing hits ↑", "benchmark.rmsd": "Packing RMSD ↓", "benchmark.budgets": "Candidates per target: SALA 50 · all-atom method baseline 50–3,150", "benchmark.unit.recovery": "Higher is better · %", "benchmark.unit.rmsd": "Lower is better · Å", "benchmark.baseline": "All-atom method baseline",
     "paper.authorship": "Authors and affiliation", "paper.affiliation": "Peking University", "paper.title": "Complex molecular crystal generation through symmetry-constrained state–context separation", "paper.title.first": "Complex molecular crystal generation", "paper.title.second": "through symmetry-constrained state–context separation", "paper.abstract.label": "Research overview", "paper.abstract.body": "Molecular crystal generation must coordinate conformation, lattice geometry and periodic packing. SALA uses flow matching to evolve a compact, symmetry-constrained asymmetric-unit state while reasoning over the full periodic environment. This state–context separation enables joint generation across four chemical classes and all seven crystal systems represented in a 799-crystal held-out benchmark.",
     "status.title": "Research status", "status.lede": "This page presents the framework, generated structures and manuscript results. The links below open once their public destinations exist.",
-    "links.note": "Code and checkpoints coming soon.", "links.label": "Research links", "links.paper": "Paper", "links.code": "Code", "links.pending": "Link to be added", "links.checkpoint.pending": "Checkpoint · link to be added", "links.open": "Open resource", "links.checkpoint.open": "Model checkpoints", "links.ready": "Available", "crystal.download": "Download HD GIF",
+    "links.note": "Architecture code is available. Checkpoints are coming soon.", "links.label": "Research links", "links.paper": "Paper", "links.code": "Code", "links.pending": "Link to be added", "links.checkpoint.pending": "Checkpoint · link to be added", "links.open": "Open resource", "links.checkpoint.open": "Model checkpoints", "links.ready": "Available", "crystal.download": "Download HD GIF",
     "texture.word": "Symmetry",
     "footer.tagline": "Symmetry in the state. Complexity in the context.", "footer.status": "SALA · Molecular crystal generation", "footer.top": "Back to top", "dialog.zoom": "Actual size", "dialog.fit": "Fit to screen", "dialog.close": "Close enlarged view"
   },
@@ -87,7 +87,7 @@ const translations = {
     "rail.label": "页码索引", "rail.cover": "封面",
     "head.left": "SALA · 分子晶体", "head.center": "对称约束下的生成", "head.subject": "分子晶体生成",
     "cover.tag1": "SALA", "cover.tag2": "分子晶体生成", "cover.scroll": "向下滑动",
-    "colophon.note": "研究项目页面 · 暂未公布发表期刊、许可协议与发布时间。",
+    "colophon.note": "模型架构代码已按 MIT 协议开放，检查点尚未发布。",
     "subject.structures": "生成结构", "subject.cases": "精选案例", "subject.framework": "方法框架", "subject.results": "研究结果", "subject.figures": "论文原图", "subject.status": "研究状态",
     "spec.rendering": "渲染", "spec.rendering.value": "管式风格 · 自定义元素配色",
     "spec.cell": "晶胞", "spec.cell.value": "2 × 2 × 2 超胞 · 完整松弛后结构",
@@ -117,7 +117,7 @@ const translations = {
     "benchmark.eyebrow": "归档堆积阈值命中统计", "benchmark.summary": "每个目标生成 50 个 SALA 候选，799 个目标中有 575 个的候选堆积 RMSD 小于 2 Å。", "benchmark.link": "查看论文证据", "benchmark.choose": "选择评估指标", "benchmark.recovery": "堆积命中率 ↑", "benchmark.rmsd": "堆积 RMSD ↓", "benchmark.budgets": "每目标候选数：SALA 50 · 全原子方法baseline 50–3,150", "benchmark.unit.recovery": "越高越好 · %", "benchmark.unit.rmsd": "越低越好 · Å", "benchmark.baseline": "全原子方法baseline",
     "paper.authorship": "作者与单位", "paper.affiliation": "北京大学", "paper.title": "通过对称约束的状态–上下文分离生成复杂分子晶体", "paper.title.first": "通过对称约束的状态–上下文分离", "paper.title.second": "生成复杂分子晶体", "paper.abstract.label": "研究概览", "paper.abstract.body": "分子晶体生成需要协同决定分子构象、晶格几何与周期堆积。SALA 采用流匹配，在紧凑且受对称性约束的不对称单元状态中进行演化，同时感知完整的周期环境。这种状态–上下文分离，使模型能够联合生成不同化学类型与晶系下的晶体结构，并在包含四类化学体系、七大晶系的 799 个留出晶体上进行评估。",
     "status.title": "研究状态", "status.lede": "本页展示方法框架、生成结构与论文结果。下列链接将在公开地址确定后开放。",
-    "links.note": "代码和检查点即将开放。", "links.label": "研究链接", "links.paper": "论文地址", "links.code": "代码地址", "links.pending": "链接待添加", "links.checkpoint.pending": "ckpt · 链接待添加", "links.open": "打开链接", "links.checkpoint.open": "模型权重", "links.ready": "已开放", "crystal.download": "下载高清 GIF",
+    "links.note": "模型架构代码已开放，检查点即将开放。", "links.label": "研究链接", "links.paper": "论文地址", "links.code": "代码地址", "links.pending": "链接待添加", "links.checkpoint.pending": "ckpt · 链接待添加", "links.open": "打开链接", "links.checkpoint.open": "模型权重", "links.ready": "已开放", "crystal.download": "下载高清 GIF",
     "texture.word": "对称性",
     "footer.tagline": "以对称性约束状态，以完整环境感知复杂性。", "footer.status": "SALA · 分子晶体生成研究", "footer.top": "返回顶部", "dialog.zoom": "原始尺寸", "dialog.fit": "适应屏幕", "dialog.close": "关闭大图"
   }
