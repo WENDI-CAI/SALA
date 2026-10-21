@@ -10,7 +10,7 @@ from pathlib import Path
 from typing import Any, Sequence
 
 MODEL_REPO = "cWendi/SALA"
-MODEL_REVISION = "main"
+MODEL_REVISION = "526ef832264dd127be3aa9cd8eb31ddbbace1044"
 MODEL_FILENAME = "sala_ema.ckpt"
 MODEL_SHA256 = "453db9f2dc8af7047d117b156ff3e8568789fbff349f2f3063577620b290804f"
 logger = logging.getLogger(__name__)
