@@ -1,0 +1,37 @@
+# Full-cell Crystal DiT architecture matching the released checkpoint.
+architecture: full_cell_crystal_dit_flow
+d_model: 1024
+num_heads: 16
+num_layers: 24
+d_ffn: 2816
+dropout: 0.0
+num_elements: 119
+use_gradient_checkpointing: false
+embedding:
+  num_fourier_freqs: 4
+  num_hybridizations: 8
+  formal_charge_range: 16
+  num_covalent_layers: 2
+attention:
+  attn_dropout: 0.0
+  use_flash: true
+  backend: sdpa
+  qk_norm: true
+pair:
+  enabled: true
+  d_pair: 128
+  num_rbf: 32
+  rbf_cutoff: 12.0
+  inter_component_cutoff: 8.0
+  max_bond_types: 16
+  max_image_candidates: 65536
+  feature_chunk_size: 131072
+  pair_chunk_size: 2048
+  image_chunk_size: 256
+  cuda_static_image_radius: 2
+  cuda_dynamic_image_radius: true
+orbit:
+  require_general_position: true
+  special_position_tolerance: 1.0e-05
+self_conditioning:
+  enabled: true

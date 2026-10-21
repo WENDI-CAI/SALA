@@ -1,0 +1,43 @@
+# Single-device training. Override compute settings for distributed training.
+compute:
+  accelerator: gpu
+  devices: 1
+  num_nodes: 1
+  strategy: auto
+  precision: 32-true
+  use_distributed_sampler: false
+training:
+  max_epochs: 1000
+  max_steps: 250000
+  gradient_clip_val: 25.0
+  accumulate_grad_batches: 1
+  val_check_interval: 1.0
+  check_val_every_n_epoch: 1
+  log_every_n_steps: 50
+  num_sanity_val_steps: 2
+stopping_and_post:
+  early_stopping: false
+  early_stopping_patience: 15
+  run_test: false
+  ema_profile_stds:
+  - 0.05
+  - 0.1
+  ema_validation_profile_std: 0.05
+wandb:
+  use_wandb: false
+  wandb_project: sala
+  wandb_entity: null
+  wandb_name: null
+compile:
+  compile_denoiser: false
+  compile_mode: reduce-overhead
+max_epochs: ${.training.max_epochs}
+max_steps: ${.training.max_steps}
+gradient_clip_val: ${.training.gradient_clip_val}
+accumulate_grad_batches: ${.training.accumulate_grad_batches}
+val_check_interval: ${.training.val_check_interval}
+log_every_n_steps: ${.training.log_every_n_steps}
+run_test: ${.stopping_and_post.run_test}
+limit_train_batches: 1.0
+limit_val_batches: 1.0
+limit_test_batches: 0

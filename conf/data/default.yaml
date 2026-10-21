@@ -1,0 +1,46 @@
+# Local data paths, filtering, and atom-count-aware batching.
+loader:
+  batch_size: 1
+  num_workers: 0
+  prefetch_factor: 2
+  pin_memory: true
+  persistent_workers: false
+  seed: ${seed}
+paths:
+  pt_root: ${oc.env:SALA_DATA_ROOT,null}
+  index_path: null
+  shard_suffix: _fullcell_q
+  shard_cache_size: 2
+filters:
+  c_count_min: null
+  c_count_max: null
+  classes: null
+  include_unknown: true
+  spacegroups: null
+  is_neutral: null
+  has_metal: null
+  n_heavy_atoms_min: null
+  n_heavy_atoms_max: null
+  n_full_atoms_min: null
+  n_full_atoms_max: 1997
+  n_components_min: null
+  n_components_max: null
+sampling:
+  sample_weight_no_metal: null
+  sample_weight_has_metal: null
+  sample_weights_path: null
+  atom_bucket_edges:
+  - 64
+  - 96
+  - 128
+  - 192
+  - 256
+  - 384
+  - 512
+  shard_local_batches: true
+  max_dense_attention_cost: 4000000
+  drop_last_train_batches: false
+  distributed_drop_last_batches: true
+augmentation:
+  asu_augmentation_enabled: true
+  asu_augmentation_probability: 0.5

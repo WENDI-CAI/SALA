@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use SALA in research, please cite the accompanying paper."
+title: "SALA: Symmetry-Aware Lattice and Asymmetric-unit generation"
+version: 1.0.0
+date-released: 2026-10-21
+authors:
+  - family-names: Cai
+    given-names: Wendi
+  - family-names: Mo
+    given-names: Fanyang
+repository-code: "https://github.com/WENDI-CAI/SALA"
+url: "https://wendi-cai.github.io/SALA/"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Symmetry-Aware Flow Matching for End-to-end Molecular Crystal Generation"
+  authors:
+    - family-names: Cai
+      given-names: Wendi
+    - family-names: Mo
+      given-names: Fanyang
+  year: 2026
+  journal: arXiv
+  url: "https://arxiv.org/abs/2609.34690"

@@ -1,0 +1,12 @@
+# Keep validation-ranked checkpoints and the latest full training state.
+monitoring:
+  monitor: val/loss
+  mode: min
+retention:
+  save_top_k: 3
+  save_last: true
+  every_n_epochs: 1
+  every_n_train_steps: null
+  last_every_n_train_steps: null
+  archive_every_n_train_steps: null
+  save_weights_only: false

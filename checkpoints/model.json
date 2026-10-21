@@ -1,0 +1,17 @@
+{
+  "format_version": 1,
+  "weights": "ema",
+  "ema_profile_std": 0.05,
+  "source_global_step": 249000,
+  "source_epoch": 175,
+  "trainable_parameters": 486282617,
+  "training_state_included": false,
+  "release_date": "2026-10-21",
+  "filename": "sala_ema.ckpt",
+  "bytes": 1945255862,
+  "sha256": "453db9f2dc8af7047d117b156ff3e8568789fbff349f2f3063577620b290804f",
+  "tensor_count": 335,
+  "floating_point_dtype": "float32",
+  "model_family": "sala_full_cell_crystal_dit_rectified_flow",
+  "checkpoint_schema_version": 16
+}

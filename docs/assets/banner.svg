@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title description">
+  <title id="title">SALA</title>
+  <desc id="description">Symmetry-Aware Lattice and Asymmetric-unit generation. An original schematic shows a molecular graph and space-group symmetry conditioning the generation of a molecular crystal.</desc>
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#263B50" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F5F4EF"/>
+      <stop offset="1" stop-color="#EEF2EE"/>
+    </linearGradient>
+    <g id="fragment" fill="none" stroke="#1D7F7E" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-15 5L-3-5 12 2 20-10"/>
+      <circle cx="-15" cy="5" r="3.1" fill="#F5F4EF"/>
+      <circle cx="-3" cy="-5" r="3.1" fill="#1D7F7E"/>
+      <circle cx="12" cy="2" r="3.1" fill="#F5F4EF"/>
+      <circle cx="20" cy="-10" r="3.1" fill="#1D7F7E"/>
+    </g>
+  </defs>
+
+  <rect width="1200" height="360" rx="18" fill="url(#fade)"/>
+  <path d="M540 0H1182Q1200 0 1200 18V342Q1200 360 1182 360H540Z" fill="url(#grid)"/>
+  <path d="M64 47H103" stroke="#1D7F7E" stroke-width="3" stroke-linecap="round"/>
+
+  <g font-family="Arial, Helvetica, sans-serif" fill="#20354B">
+    <text x="64" y="78" font-size="12" font-weight="700" letter-spacing="2.2" fill="#1D7F7E">MOLECULAR CRYSTAL GENERATION</text>
+    <text x="59" y="172" font-size="91" font-weight="700" letter-spacing="3">SALA</text>
+    <text x="64" y="217" font-size="24" font-weight="400">Symmetry-Aware Lattice and</text>
+    <text x="64" y="249" font-size="24" font-weight="400">Asymmetric-unit generation</text>
+    <text x="64" y="308" font-size="14" fill="#53677A">FLOW MATCHING</text>
+    <circle cx="215" cy="303" r="2" fill="#86A8A5"/>
+    <text x="232" y="308" font-size="14" fill="#53677A">486M PARAMETERS</text>
+  </g>
+
+  <!-- Molecular graph: original schematic, not a dataset structure. -->
+  <g transform="translate(640 170)" fill="none" stroke="#263B50" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0-42L36-21V21L0 42-36 21V-21Z"/>
+    <path d="M-25-17L0-32M27-14V15M0 31L-25 17" stroke-width="1.5"/>
+    <path d="M36-21L63-37M-36 21L-56 40"/>
+    <circle cx="0" cy="-42" r="5" fill="#263B50"/>
+    <circle cx="36" cy="-21" r="5" fill="#263B50"/>
+    <circle cx="36" cy="21" r="5" fill="#263B50"/>
+    <circle cx="0" cy="42" r="5" fill="#263B50"/>
+    <circle cx="-36" cy="21" r="5" fill="#263B50"/>
+    <circle cx="-36" cy="-21" r="5" fill="#263B50"/>
+    <circle cx="63" cy="-37" r="7" fill="#1D7F7E" stroke="#1D7F7E"/>
+    <circle cx="-56" cy="40" r="7" fill="#1D7F7E" stroke="#1D7F7E"/>
+  </g>
+
+  <g stroke="#97ABA9" stroke-width="1.7" stroke-linecap="round">
+    <path d="M728 169H743M735.5 161.5V176.5"/>
+  </g>
+
+  <!-- Symmetry-related molecular motifs. -->
+  <g transform="translate(825 170)">
+    <circle r="59" fill="#F5F7F3" fill-opacity="0.7" stroke="#96B8B1" stroke-width="1" stroke-dasharray="3 5"/>
+    <path d="M-48 0H48M0-48V48" fill="none" stroke="#BCD0C9" stroke-width="1"/>
+    <use href="#fragment" transform="translate(-25 -25) scale(.7)"/>
+    <use href="#fragment" transform="translate(25 25) rotate(180) scale(.7)"/>
+    <use href="#fragment" transform="translate(25 -25) rotate(90) scale(.7)" opacity="0.58"/>
+    <use href="#fragment" transform="translate(-25 25) rotate(-90) scale(.7)" opacity="0.58"/>
+    <circle r="3" fill="#1D7F7E"/>
+  </g>
+
+  <g fill="none" stroke="#97ABA9" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M910 170H944M937 164L944 170 937 176"/>
+  </g>
+
+  <!-- Unit cell with repeated molecular motifs. -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <path d="M977 142L1049 106 1132 147 1060 183Z" fill="#DDECE4" fill-opacity="0.65"/>
+    <path d="M977 142L1060 183V255L977 214Z" fill="#F7F8F3" fill-opacity="0.75"/>
+    <path d="M1060 183L1132 147V219L1060 255Z" fill="#CCE2D9" fill-opacity="0.7"/>
+    <path d="M977 142L1049 106 1132 147 1060 183 977 142V214L1060 255 1132 219V147M1060 183V255" fill="none" stroke="#34566A" stroke-width="1.6"/>
+    <path d="M1049 106V178L977 214M1049 178L1132 219" fill="none" stroke="#71988F" stroke-width="1.1" stroke-dasharray="4 4"/>
+    <use href="#fragment" transform="translate(1043 148) rotate(8) scale(.78)"/>
+    <use href="#fragment" transform="translate(1008 182) rotate(32) scale(.78)"/>
+    <use href="#fragment" transform="translate(1094 188) rotate(-33) scale(.78)"/>
+    <use href="#fragment" transform="translate(1051 223) rotate(8) scale(.78)"/>
+    <g fill="#34566A">
+      <circle cx="977" cy="142" r="2.3"/><circle cx="1049" cy="106" r="2.3"/>
+      <circle cx="1132" cy="147" r="2.3"/><circle cx="1060" cy="183" r="2.3"/>
+      <circle cx="977" cy="214" r="2.3"/><circle cx="1060" cy="255" r="2.3"/>
+      <circle cx="1132" cy="219" r="2.3"/>
+    </g>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#53677A">
+    <text x="640" y="285">Molecular graph</text>
+    <text x="825" y="285">Space group</text>
+    <text x="1055" y="285">Crystal candidates</text>
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+defaults:
+  - data@data: default
+  - model@model: default
+  - flow@flow: default
+  - optim@optim: default
+  - trainer@trainer: default
+  - checkpoint@checkpoint: default
+  - generation@generation: default
+  - _self_
+
+seed: 42
+resume_from: null
+finetune_from: null

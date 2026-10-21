@@ -1,0 +1,1 @@
+"""SALA package module."""

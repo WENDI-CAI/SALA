@@ -1,0 +1,69 @@
+# Crystal generation from local CIF or preprocessed PT conditioning.
+run:
+  mode: single
+  checkpoint_path: null
+  device: null
+  seed: ${seed}
+  ema_profile_std: 0.05
+  batch_size: 1
+  sample_batch_size: 1
+  use_data_filters: true
+io:
+  input: null
+  input_dir: null
+  input_index: null
+  pt_root: null
+  output_dir: null
+  input_format: auto
+sampler:
+  num_samples: 20
+  num_steps: null
+  corrector:
+    symmetry_rigid:
+      postprocess_enabled: false
+      postprocess_steps: 12
+      translations:
+      - -1
+      - 0
+      - 1
+      max_symops: null
+      heavy_only: true
+      vdw_scale: 0.78
+      metal_vdw_scale: 0.6
+      clash_weight: 1.0
+      hard_tail_weight: 0.25
+      translation_weight: 0.02
+      rotation_weight: 0.002
+      translation_step_size_A: 0.05
+      rotation_step_size: 0.02
+      line_search_steps: 6
+      enable_rotation: true
+outputs:
+  save_cif: true
+  save_pt: true
+  save_reference: false
+  save_trajectory_cif: false
+  trajectory_interval: 100
+  hydrogenation:
+    enabled: false
+    failure_policy: strict
+    output_subdir: hydrogenated
+eval:
+  filter_h: true
+  split: val
+  max_targets: null
+  target_selection: first
+  target_selection_seed: 42
+  shard_cache_size: null
+  shard_suffix: null
+  c_count_min: null
+  c_count_max: null
+  classes: null
+  include_unknown: null
+  spacegroups: null
+  is_neutral: null
+  has_metal: null
+  n_heavy_atoms_min: null
+  n_heavy_atoms_max: null
+  n_components_min: null
+  n_components_max: null

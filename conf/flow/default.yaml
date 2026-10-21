@@ -1,0 +1,76 @@
+# Full-cell velocity and contact/clash objective; no endpoint loss.
+state:
+  coordinate: canonical_cartesian
+  lattice: constrained_q
+  model: normalized_cartesian_whitened_q
+  output: fractional_unwrapped
+  coord_scale: 8.0
+path:
+  type: rectified_linear
+  prediction: velocity
+  data_time: 0.0
+  noise_time: 1.0
+time_sampling:
+  type: logit_normal
+  mean: 0.0
+  std: 1.0
+  clamp: 1.0e-05
+time_condition:
+  type: scaled_time
+  scale: 1000.0
+geometry:
+  stabilization_start: 0.5
+  latent_clip: 1.5
+self_conditioning:
+  enabled: true
+  train_probability: 0.5
+  prepass_selected_only: true
+  detach: true
+  sampling_enabled: true
+  representation: normalized_clean_residual
+loss:
+  coord_velocity_weight: 1.0
+  coord_velocity_mode: full_cell_orbit
+  lattice_velocity_weight: 1.0
+  full_cell_endpoint_weight: 0.0
+  coord_endpoint_pred_lattice_mode: input
+  lattice_endpoint_weight: 0.0
+  lattice_normalize_by_dof: true
+  contact_clash:
+    enabled: true
+    weight: 0.1
+    max_time: 0.4
+    vdw_offset_A: 1.0
+    contact_cutoff_A: 5.0
+    contact_match_weight: 1.0
+    huber_delta_A: 0.5
+    predicted_lattice_mode: input
+    pair_chunk_size: 65536
+    checkpoint_pair_distances: false
+    periodic_image_radius: 1
+    periodic_fallback_max_candidates: 65536
+prior:
+  lattice:
+    type: volume
+    length_log_std: 0.3
+    angle_std: 0.2
+sampler:
+  solver: flow_2m
+  num_steps: 24
+  time_grid: uniform
+  count_nfe: true
+uncertainty_weighting:
+  enabled: false
+  channels: 128
+  clamp:
+  - -4.0
+  - 4.0
+diagnostics:
+  time_bucket_edges:
+  - 0.0
+  - 0.1
+  - 0.25
+  - 0.5
+  - 0.75
+  - 0.9
+  - 1.0
