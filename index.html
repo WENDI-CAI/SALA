@@ -21,9 +21,9 @@
       setTimeout(function () { if (!root.dataset.revealArmed) root.classList.remove("reveal-ready"); }, 4000);
     })();
   </script>
-  <script src="site-config.js?v=architecture-release-1" defer></script>
+  <script src="site-config.js?v=full-release-1" defer></script>
   <script src="media-controller.js?v=all-visible-1" defer></script>
-  <script src="app.js?v=architecture-release-1" defer></script>
+  <script src="app.js?v=full-release-1" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
@@ -157,11 +157,11 @@
         <div class="cover-side">
           <p class="cover-lede" data-reveal style="--i:2" data-i18n="hero.description">Molecular conformation, lattice geometry, and crystal packing. Generated together, guided by symmetry.</p>
           <nav class="research-links" data-reveal style="--i:3" id="resources" aria-label="Research links" data-i18n-aria="links.label">
-            <a class="resource-link" data-resource="paper" role="link" aria-disabled="true" tabindex="0"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7Z M14 3v5h4 M10 12h5 M10 16h5"/></svg></span><span class="resource-link-copy"><strong data-i18n="links.paper">Paper</strong><span data-link-status data-i18n="links.pending">Link to be added</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
-            <a class="resource-link" data-resource="code" role="link" aria-disabled="true" tabindex="0"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5 M16 7l5 5-5 5 M14 4l-4 16"/></svg></span><span class="resource-link-copy"><strong data-i18n="links.code">Code</strong><span data-link-status data-i18n="links.pending">Link to be added</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
-            <a class="resource-link" data-resource="checkpoint" role="link" aria-disabled="true" tabindex="0"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z M4 7.5l8 4.5 8-4.5 M12 12v9"/></svg></span><span class="resource-link-copy"><strong>Hugging Face</strong><span data-link-status data-i18n="links.checkpoint.pending">Checkpoint · link to be added</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
+            <a class="resource-link" data-resource="paper" href="https://arxiv.org/pdf/2609.34690" target="_blank" rel="noopener noreferrer"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7Z M14 3v5h4 M10 12h5 M10 16h5"/></svg></span><span class="resource-link-copy"><strong data-i18n="links.paper">Paper</strong><span data-link-status data-i18n="links.open">Open resource</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
+            <a class="resource-link" data-resource="code" href="https://github.com/WENDI-CAI/SALA" target="_blank" rel="noopener noreferrer"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5 M16 7l5 5-5 5 M14 4l-4 16"/></svg></span><span class="resource-link-copy"><strong data-i18n="links.code">Code</strong><span data-link-status data-i18n="links.open">Open resource</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
+            <a class="resource-link" data-resource="checkpoint" href="https://huggingface.co/cWendi/SALA" target="_blank" rel="noopener noreferrer"><span class="resource-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9Z M4 7.5l8 4.5 8-4.5 M12 12v9"/></svg></span><span class="resource-link-copy"><strong>Hugging Face</strong><span data-link-status data-i18n="links.checkpoint.open">Model checkpoints</span></span><span class="resource-link-arrow" aria-hidden="true">↗</span></a>
           </nav>
-          <p class="resource-status" data-reveal style="--i:4" id="resource-status" data-i18n="links.note">Architecture code is available. Checkpoints are coming soon.</p>
+          <p class="resource-status" data-reveal style="--i:4" id="resource-status" data-i18n="links.note">Full training and inference code and pretrained checkpoints are available.</p>
           <a class="scroll-cue" data-reveal style="--i:5" href="#structures"><span data-i18n="cover.scroll">Scroll</span><span aria-hidden="true">↓</span></a>
         </div>
       </div>
@@ -387,13 +387,13 @@
       <div class="spread-inner page-width status-grid">
         <div class="status-left" data-reveal style="--i:0">
           <h2 id="status-heading" data-i18n="status.title">Research status</h2>
-          <p class="status-lede" data-i18n="status.lede">This page presents the framework, generated structures and manuscript results. The links below open once their public destinations exist.</p>
+          <p class="status-lede" data-i18n="status.lede">Code for data preparation, training and SMILES inference is available on GitHub. Pretrained checkpoints are available on Hugging Face.</p>
           <ul class="status-list">
-            <li><span class="status-key" data-i18n="links.paper">Paper</span><span class="status-value" data-status-slot="paper" data-i18n="links.pending">Link to be added</span></li>
-            <li><span class="status-key" data-i18n="links.code">Code</span><span class="status-value" data-status-slot="code" data-i18n="links.pending">Link to be added</span></li>
-            <li><span class="status-key">Hugging Face</span><span class="status-value" data-status-slot="checkpoint" data-i18n="links.checkpoint.pending">Checkpoint · link to be added</span></li>
+            <li><span class="status-key" data-i18n="links.paper">Paper</span><span class="status-value is-ready" data-status-slot="paper" data-i18n="links.ready">Available</span></li>
+            <li><span class="status-key" data-i18n="links.code">Code</span><span class="status-value is-ready" data-status-slot="code" data-i18n="links.ready">Available</span></li>
+            <li><span class="status-key">Hugging Face</span><span class="status-value is-ready" data-status-slot="checkpoint" data-i18n="links.ready">Available</span></li>
           </ul>
-          <p class="colophon" data-i18n="colophon.note">Model architecture code is released under the MIT License; checkpoints remain unreleased.</p>
+          <p class="colophon" data-i18n="colophon.note">Code is released under the MIT License. Pretrained checkpoints are available on Hugging Face; see the model card for their terms.</p>
         </div>
         <div class="status-right" data-reveal style="--i:1">
           <div class="closing-mark">
